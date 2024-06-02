@@ -29,9 +29,10 @@ namespace ECommerce_MVC.Data
                 {
                     var Products = new List<Product>
                     {
-                        new Product{Name="P1",Description = "D1" ,Price=150,ImageUrl="https..." , Color=ProductColor.Red,CategoryId=1},
-                        new Product{Name="P2",Description = "D2" ,Price=200,ImageUrl="https..." , Color=ProductColor.black,CategoryId=2},
-                        new Product{Name="P3",Description = "D3" ,Price=250,ImageUrl="https..." , Color=ProductColor.yellow,CategoryId=3},
+                        new Product{Name="P1",Description = "D1" ,Price=150,ImageUrl="images/Congee.png" , Color=ProductColor.Red,CategoryId=1},
+                        new Product{Name="P2",Description = "D2" ,Price=200,ImageUrl="images/ChickenMarsala.png" , Color=ProductColor.black,CategoryId=2},
+                        new Product{Name="P3",Description = "D3" ,Price=250,ImageUrl="images/PepperPasta.png" , Color=ProductColor.blue,CategoryId=3},
+                        new Product{Name="P3",Description = "D3" ,Price=300,ImageUrl="images/VegetarianRefriedBeans.png" , Color=ProductColor.blue,CategoryId=3},
 
                     };
                     Context.AddRange(Products);

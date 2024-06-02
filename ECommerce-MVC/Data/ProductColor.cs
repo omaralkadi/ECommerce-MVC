@@ -2,6 +2,6 @@
 {
     public enum ProductColor
     {
-        Red=1,green,blue,black,yellow
+        Red=1,green,blue,black
     }
 }
