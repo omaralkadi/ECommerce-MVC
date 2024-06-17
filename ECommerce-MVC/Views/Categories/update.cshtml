@@ -1,0 +1,35 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Update Category</h1>
+
+
+<div class="col-md-8 offset-2">
+
+    <form asp-action="Update">
+
+        <input asp-for="CategoryId" hidden/>
+        <div class="form-group">
+            <label for="exampleInputEmail1" asp-for="Name">Category Name</label>
+            <input class="form-control" id="exampleInputEmail1" asp-for="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="desc" asp-for="Description">Description</label>
+            <textarea class="form-control" id="desc" asp-for="Description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-action="Index" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+
+</div>
+
+@section Validation {
+    <partial name="_ValidationScriptsPartial"></partial>
+}

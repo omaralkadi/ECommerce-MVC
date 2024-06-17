@@ -1,4 +1,6 @@
 using ECommerce_MVC.Data;
+using ECommerce_MVC.Data.Interfaces;
+using ECommerce_MVC.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce_MVC
@@ -15,6 +17,9 @@ namespace ECommerce_MVC
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
+            builder.Services.AddScoped<IProductRepo, ProductRepo>();
 
 
             var app = builder.Build();
@@ -38,7 +43,7 @@ namespace ECommerce_MVC
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=PRoducts}/{action=Index}/{id?}");
+                pattern: "{controller=Products}/{action=Index}/{id?}");
 
             app.Run();
         }

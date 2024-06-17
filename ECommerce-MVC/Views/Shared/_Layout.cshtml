@@ -27,8 +27,8 @@
                         </li>
                     </ul>
 
-                    <form style="display:flex ; align-items:center">
-                        <input type="text" class="form-control" placeholder="Search here..." style="margin-right:5px" />
+                    <form style="display:flex ; align-items:center" asp-action="Index">
+                        <input type="text" class="form-control" placeholder="Search here..." style="margin-right:5px" name="name" />
                         <button type="submit" class="btn btn-outline-success">
                             <i class="fas fa-regular fa-search"></i>
                         </button>
@@ -45,8 +45,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="border-top footer text-muted fixed-bottom">
+        <div class="container text-center">
             &copy; 2024 - ECommerce_MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
@@ -54,5 +54,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Validation", required: false)
 </body>
 </html>

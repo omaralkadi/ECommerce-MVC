@@ -83,7 +83,7 @@ namespace ECommerce_MVC.Migrations
                     b.HasOne("ECommerce_MVC.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
