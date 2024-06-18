@@ -1,4 +1,5 @@
 using ECommerce_MVC.Data;
+using ECommerce_MVC.Data.Cart;
 using ECommerce_MVC.Data.Interfaces;
 using ECommerce_MVC.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,11 @@ namespace ECommerce_MVC
 
             builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
             builder.Services.AddScoped<IProductRepo, ProductRepo>();
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            builder.Services.AddScoped(x => ShoppingCart.getShoppingCart(x));
+            builder.Services.AddSession();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+
 
 
             var app = builder.Build();
@@ -38,6 +44,7 @@ namespace ECommerce_MVC
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 

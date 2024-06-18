@@ -22,9 +22,9 @@
                 <p>@product.Description</p>
                 <p style="color:@product.Color">@product.Color</p>
                 <p>@product.Category.Name</p>
-                <button style="background-color:black ; color:white;height:50px">
+                <a style="background-color:black ; color:white;height:30px;text-decoration:none" asp-controller="Order" asp-action="AddToCart" asp-route-id="@product.Id">
                     <i class="fas fa-regular fa-shopping-basket"></i>
-                    Add To Cart</button>
+                    Add To Cart</a>
 
             </div>
 

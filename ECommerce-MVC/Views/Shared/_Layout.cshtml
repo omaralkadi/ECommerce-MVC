@@ -27,13 +27,26 @@
                         </li>
                     </ul>
 
-                    <form style="display:flex ; align-items:center" asp-action="Index">
+                    <form style="display:flex ; align-items:center;margin-right:20px" asp-action="Index">
                         <input type="text" class="form-control" placeholder="Search here..." style="margin-right:5px" name="name" />
                         <button type="submit" class="btn btn-outline-success">
                             <i class="fas fa-regular fa-search"></i>
                         </button>
                     </form>
 
+                    <ul class="navbar-nav">
+                        @await Component.InvokeAsync("ShoppingCartSummary")
+                    </ul>
+
+                    <div class="dropdown" style="margin-right:5%">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hello User 
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="Order" asp-action="Index">Orders</a></li>
+                           
+                        </ul>
+                    </div>
 
                 </div>
             </div>
@@ -53,6 +66,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
     @await RenderSectionAsync("Validation", required: false)
 </body>
